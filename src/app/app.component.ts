@@ -10,19 +10,4 @@ import { IndexComponent } from './features/index/index.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'portfolio';
-
-  changeTitle(): void {
-    const possibleCharacters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const randomString = Array.from(
-      { length: 10 },
-      () =>
-        possibleCharacters[
-          Math.floor(Math.random() * possibleCharacters.length)
-        ]
-    ).join('');
-    this.title = randomString;
-  }
-}
+export class AppComponent {}

@@ -271,38 +271,25 @@
        ========================================================================== */
 
     $(window).on('load', function () {
+      // ## Project Filtering
+      if ($(".project-masonry-active").length) {
+        $(this).imagesLoaded(function () {
+          $(".project-masonry-active").isotope({
+            // options
+            itemSelector: ".item",
+          });
+        });
+      }
 
-        // ## Preloader
-        function handlePreloader() {
-            if ($('.preloader').length) {
-                $('.preloader').delay(200).fadeOut(500);
-            }
-        }
-        handlePreloader();
-        
-        
-        // ## Project Filtering
-        if ($('.project-masonry-active').length) {
-            $(this).imagesLoaded(function () {
-                $('.project-masonry-active').isotope({
-                    // options
-                    itemSelector: '.item',
-                });
-            });
-        }
-          
-        
-        // ## Blog Standard
-        if ($('.blog-standard-wrap').length) {
-            $(this).imagesLoaded(function () {
-                $('.blog-standard-wrap').isotope({
-                    // options
-                    itemSelector: '.item',
-                });
-            });
-        }
-          
-        
+      // ## Blog Standard
+      if ($(".blog-standard-wrap").length) {
+        $(this).imagesLoaded(function () {
+          $(".blog-standard-wrap").isotope({
+            // options
+            itemSelector: ".item",
+          });
+        });
+      }
     });
 
 })(window.jQuery);

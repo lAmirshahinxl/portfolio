@@ -7,7 +7,7 @@ export const routes: Routes = [
     component: IndexComponent,
     children: [
       {
-        path: 'movies',
+        path: '',
         loadComponent: () =>
           import('./features/index/index.component').then(
             (m) => m.IndexComponent
