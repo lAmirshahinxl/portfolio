@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 // import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
+import { ProjectModel } from '../../shared/models/project.model';
+import { PROJECTS_LIST } from '../../shared/utils/statics';
 import { LoadingComponent } from '../components/loading/loading.component';
 import { MainHeaderComponent } from '../components/main-header/main-header.component';
 
@@ -20,11 +21,10 @@ import { MainHeaderComponent } from '../components/main-header/main-header.compo
 export class IndexComponent implements OnInit {
   isLoading: boolean = true;
   isPersian: boolean = false;
+  projectList: ProjectModel[] = PROJECTS_LIST;
 
-  constructor(
+  constructor() {
     // private translocoService: TranslocoService,
-    private route: ActivatedRoute
-  ) {
     // this.route.queryParams.subscribe((params) => {
     //   const lang = params['l'] === 'fa' ? 'fa' : 'en';
     //   if (lang === 'fa') {
