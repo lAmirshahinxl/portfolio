@@ -56,7 +56,7 @@ body {
   font-family: "Inter", sans-serif;
   --base-color: rgba(255, 255, 255, 0.65);
   --heading-color: #ffffff;
-  --primary-color: #c9f31d;
+  --primary-color: #0082E0;
   --lighter-color: #1f1f1f;
   --black-color: #070707;
   --border-color: rgba(255, 255, 255, 0.1);
@@ -464,7 +464,7 @@ a.theme-btn {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  color: var(--black-color);
+  color: var(--heading-color);
   border-radius: 15px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

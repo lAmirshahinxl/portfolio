@@ -21,34 +21,34 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'Application Development',
     'The Aqila Crypto Currency Wallet is a software program designed to securely store private and public keys used for interacting with blockchain networks and managing various cryptocurrencies.',
     'aqila.jpg',
-    'https://bitimen.com/'
+    'https://www.aquila.ch/en/bank/'
   ),
   new ProjectModel(
     'Nobitex Site',
     'Website Development',
     ' Nobitex Explore Nobitex is the largest digital currency exchange in Iran, providing professional services for buying and selling digital    currencies without intermediaries',
     'nobitex.jpg',
-    'https://bitimen.com/'
+    'https://nobitex.ir/en/'
   ),
   new ProjectModel(
     'Zaban Application',
     'Application Development',
     'Zaban is an AI-powered language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency in Iran, Spanish, and more. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
     'zaban-mobile.jpg',
-    'https://bitimen.com/'
+    'https://zaban.com/'
   ),
   new ProjectModel(
     'ZalTV Television Application',
     'Application Development',
     'ZalTV is a dedicated IPTV player designed for simplicity and speed. It caters to users who want a straightforward way to watch Internet Protocol Television (IPTV) content on their large screens and TV remote controls.',
     'zaltv.jpg',
-    'https://bitimen.com/'
+    'https://zaltv.com/'
   ),
   new ProjectModel(
     'Zaban WebSite',
     'Website Development',
     'Zaban is an AI-powered language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency in Iran, Spanish, and more. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
     'zaban-laptop.jpg',
-    'https://bitimen.com/'
+    'https://stg.zaban.io/'
   ),
 ];
