@@ -10,7 +10,7 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'https://bitimen.com/'
   ),
   new ProjectModel(
-    'Woodcomerce Shopping Application',
+    'Wood craft Shopping Application',
     'Application Development',
     'A world of wood at your fingertips: Explore endless possibilities with Wood-commerce',
     'woodcomerce.jpg',
@@ -33,7 +33,7 @@ export const PROJECTS_LIST: ProjectModel[] = [
   new ProjectModel(
     'Zaban Application',
     'Application Development',
-    'Zaban is an AI-powered language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency in Iran, Spanish, and more. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
+    'Zaban is language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency English. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
     'zaban-mobile.jpg',
     'https://zaban.com/'
   ),
@@ -45,9 +45,9 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'https://zaltv.com/'
   ),
   new ProjectModel(
-    'Zaban WebSite',
-    'Website Development',
-    'Zaban is an AI-powered language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency in Iran, Spanish, and more. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
+    'Zaban PWA',
+    'Flutter Development',
+    'Zaban is language learning app designed to tailor content to your interests, so you can stay engaged and motivated as you work towards fluency English. Crafted to match your level, Zaban makes it easy to learn at your own pace and on your own terms',
     'zaban-laptop.jpg',
     'https://stg.zaban.io/'
   ),
