@@ -9,19 +9,26 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'bitimen.jpg',
     'https://bitimen.com/'
   ),
-  new ProjectModel(
-    'Wood craft Shopping Application',
-    'Application Development',
-    'A world of wood at your fingertips: Explore endless possibilities with Wood-commerce',
-    'woodcomerce.jpg',
-    'https://bitimen.com/'
-  ),
+  // new ProjectModel(
+  //   'Wood craft Shopping Application',
+  //   'Application Development',
+  //   'A world of wood at your fingertips: Explore endless possibilities with Wood-commerce',
+  //   'woodcomerce.jpg',
+  //   'https://bitimen.com/'
+  // ),
   new ProjectModel(
     'Aqila Crypto Currency Wallet',
     'Application Development',
     'The Aqila Crypto Currency Wallet is a software program designed to securely store private and public keys used for interacting with blockchain networks and managing various cryptocurrencies.',
     'aqila.jpg',
     'https://www.aquila.ch/en/bank/'
+  ),
+  new ProjectModel(
+    'Vibez App',
+    'Application Development',
+    'Companion for event participants with features for event discovery, communication, ticket purchase, community membership, and cashless payments',
+    'vibez.webp',
+    'https://www.vibez.io/'
   ),
   new ProjectModel(
     'Nobitex Site',
