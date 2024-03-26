@@ -7,7 +7,7 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'Application Development',
     'Android & IOS Application Trade smarter, not harder. Bitimen puts the power of cryptocurrency in your pocket.',
     'bitimen.jpg',
-    'https://bitimen.com/'
+    'https://bitimen.com/application-download'
   ),
   // new ProjectModel(
   //   'Wood craft Shopping Application',
