@@ -1,10 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-// import { TranslocoModule, TranslocoService } from '@ngneat/transloco';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ProjectModel } from '../../shared/models/project.model';
 import { PROJECTS_LIST } from '../../shared/utils/statics';
 import { LoadingComponent } from '../components/loading/loading.component';
 import { MainHeaderComponent } from '../components/main-header/main-header.component';
+import { FireStoreService } from '../services/firestore.service';
 
 @Component({
   selector: 'app-index',
@@ -15,45 +22,54 @@ import { MainHeaderComponent } from '../components/main-header/main-header.compo
     CommonModule,
     LoadingComponent,
     MainHeaderComponent,
-    // TranslocoModule,
+    ReactiveFormsModule,
   ],
 })
 export class IndexComponent implements OnInit {
-  isLoading: boolean = true;
-  isPersian: boolean = false;
+  isLoading: boolean = false;
   projectList: ProjectModel[] = PROJECTS_LIST;
+  requestForm!: FormGroup;
 
-  constructor() {
-    // private translocoService: TranslocoService,
-    // this.route.queryParams.subscribe((params) => {
-    //   const lang = params['l'] === 'fa' ? 'fa' : 'en';
-    //   if (lang === 'fa') {
-    //     this.isPersian = true;
-    //   }
-    //   this.translocoService.setActiveLang(lang);
-    // });
+  constructor(
+    private fireStore: FireStoreService,
+    fb: FormBuilder,
+    private toastr: ToastrService
+  ) {
+    this.requestForm = fb.group({
+      email: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      content: ['', [Validators.required]],
+      subject: ['', []],
+      name: ['', [Validators.required]],
+    });
   }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2000);
+  onRequestSubmit() {
+    if (this.requestForm.invalid) {
+      this.toastr.error('Please fill all the required fields');
+      return;
+    }
+    const formValues = {
+      ...this.requestForm.value,
+      date: new Date().getTime(),
+    };
+
+    console.log('this is for value');
+
+    console.log(formValues);
+
+    this.isLoading = true;
+    this.fireStore
+      .insertRequest(formValues)
+      .then(() => {
+        this.isLoading = false;
+        this.requestForm.reset();
+        this.toastr.success('Request Submitted Successfully');
+      })
+      .catch((err) => {
+        this.isLoading = false;
+        this.toastr.error(err);
+      });
   }
-
-  // async onSubmitAppeal(): Promise<void> {
-  //   try {
-  //     this.loading = true;
-  //     const email = this.signInForm.value.email as string;
-  //     const { error } = await this.supabase.signIn(email);
-  //     if (error) throw error;
-  //     alert('Check your email for the login link!');
-  //   } catch (error) {
-  //     if (error instanceof Error) {
-  //       alert(error.message);
-  //     }
-  //   } finally {
-  //     this.signInForm.reset();
-  //     this.loading = false;
-  //   }
-  // }
 }

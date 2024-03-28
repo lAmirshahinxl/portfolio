@@ -9,5 +9,6 @@ import { FaIndexComponent } from './features/fa-index/fa-index.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, FaIndexComponent],
+
 })
 export class AppComponent {}
