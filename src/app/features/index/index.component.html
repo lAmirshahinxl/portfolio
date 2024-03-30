@@ -1,8 +1,12 @@
 <div class="page-wrapper">
   <!-- Preloader -->
-  <div *ngIf="isLoading" class="fixed-top w-100 h-100 amir" style="opacity: 0.7;">
+  <!-- <div
+    *ngIf="isLoading"
+    class="fixed-top w-100 h-100 amir"
+    style="opacity: 0.7"
+  >
     <app-loading></app-loading>
-  </div>
+  </div> -->
 
   <!-- main header -->
   <app-main-header></app-main-header>
@@ -20,12 +24,12 @@
 
       <!--Appointment Form-->
       <div class="appointment-form">
-        <form method="post" action="contact.html">
+        <form [formGroup]="appealRequestForm" (ngSubmit)="onAppealRequest()">
           <div class="form-group">
             <input
               type="text"
               name="text"
-              value=""
+              formControlName="name"
               placeholder="Name"
               required
             />
@@ -34,26 +38,25 @@
             <input
               type="email"
               name="email"
-              value=""
               placeholder="Email Address"
+              formControlName="email"
               required
             />
           </div>
           <div class="form-group">
-            <textarea placeholder="Message" rows="5"></textarea>
+            <textarea placeholder="Message" rows="5" formControlName="message"></textarea>
           </div>
           <div class="form-group">
-            <button type="submit" class="theme-btn">Submit now</button>
+            <button type="submit" class="theme-btn" [disabled]="isLoading">Submit now</button>
           </div>
         </form>
       </div>
 
       <!--Social Icons-->
       <div class="social-style-one">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://x.com/lamirabasil?t=kGNXHUkgC78lZZYElD51Ug&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/amirabasi___?igsh=eGk4dmltazdjcmNx" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/amir-abasi-661b381b7/" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </section>
@@ -67,11 +70,11 @@
           <div class="hero-content rmb-55 wow fadeInUp delay-0-2s">
             <span class="h2">Hello, i’m </span>
             <h1><b>Amir Abasi</b> Fullstack Developer</h1>
-            <p>Building Apps | Never Give Up | Amir, Flutter Dev</p>
+            <p>Building Apps | Code Artist | Amir, Flutter Dev</p>
             <div class="hero-btns">
-              <a href="contact.html" class="theme-btn"
+              <button href="contact.html" class="theme-btn" (click)="onHireMe()"
                 >Hire Me <i class="far fa-angle-right"></i
-              ></a>
+              ></button>
               <a href="contact.html" class="read-more"
                 >Download Resume <i class="far fa-angle-right"></i
               ></a>
@@ -844,10 +847,10 @@
           <div
             class="contact-form contact-form-wrap form-style-one wow fadeInUp delay-0-4s"
           >
-            <form 
-            [formGroup]="requestForm" 
-            class="contactForm" 
-            (ngSubmit)="onRequestSubmit()"
+            <form
+              [formGroup]="requestForm"
+              (ngSubmit)="onRequestSubmit()"
+              class="contactForm"
             >
               <div class="row">
                 <div class="col-md-6">
@@ -934,7 +937,11 @@
                 </div>
                 <div class="col-md-12">
                   <div class="form-group mb-0">
-                    <button type="submit" class="theme-btn">
+                    <button
+                      type="submit"
+                      class="theme-btn"
+                      [disabled]="isLoading"
+                    >
                       Send Us Message <i class="far fa-angle-right"></i>
                     </button>
                     <div id="msgSubmit" class="hidden"></div>
@@ -1153,17 +1160,30 @@
             <div
               class="footer-widget widget_newsletter wow fadeInUp delay-0-4s"
             >
-              <form action="#">
+              <form
+                [formGroup]="contactRequestForm"
+                (ngSubmit)="onSubmitContactRequest()"
+              >
                 <label for="email-address"
                   ><i class="far fa-envelope"></i
                 ></label>
                 <input
                   id="email-address"
                   type="email"
+                  formControlName="email"
                   placeholder="Email Address"
                   required
                 />
-                <button>Sign Up <i class="far fa-angle-right"></i></button>
+                <button
+                  style="color: white"
+                  type="submit"
+                  [disabled]="isLoading"
+                >
+                  Contact request<i
+                    class="far fa-angle-right"
+                    style="color: white"
+                  ></i>
+                </button>
               </form>
             </div>
           </div>
@@ -1195,7 +1215,6 @@
                   <i class="far fa-phone"></i>
                   <a href="callto:+989397974230">+98 (939) 797 4230</a>
                 </li>
-                
               </ul>
             </div>
           </div>
@@ -1215,9 +1234,26 @@
           </div>
           <div class="col-lg-6 text-lg-end">
             <ul class="footer-bottom-nav">
-              <li><a href="https://x.com/lamirabasil?t=kGNXHUkgC78lZZYElD51Ug&s=09">Twitter</a></li>
-              <li><a href="https://www.instagram.com/amirabasi___?igsh=eGk4dmltazdjcmNx" target="_blank">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/amir-abasi-661b381b7/" target="_blank">LinkedIn</a></li>
+              <li>
+                <a
+                  href="https://x.com/lamirabasil?t=kGNXHUkgC78lZZYElD51Ug&s=09"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/amirabasi___?igsh=eGk4dmltazdjcmNx"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/amir-abasi-661b381b7/"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+              </li>
             </ul>
           </div>
         </div>

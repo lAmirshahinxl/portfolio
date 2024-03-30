@@ -17,7 +17,36 @@ export class FireStoreService {
   async insertRequest(data: any) {
     try {
       const col = collection(db, 'requests');
-      const docRef = await addDoc(col, data);
-    } catch (e) {}
+      await addDoc(col, data);
+      return true;
+    } catch (error) {
+      console.log(error);
+
+      return false;
+    }
   }
+  async submitContactRequest(data: any) {
+    try {
+      const col = collection(db, 'contact-requests');
+      await addDoc(col, data);
+      return true;
+    } catch (error) {
+      console.log(error);
+
+      return false;
+    }
+  }
+
+  async submitAppealRequest(data: any) {
+    try {
+      const col = collection(db, 'appeal-requests');
+      await addDoc(col, data);
+      return true;
+    } catch (error) {
+      console.log(error);
+
+      return false;
+    }
+  }
+
 }
