@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.environment';
 
 const app = initializeApp(environment.firebase);
 const db = getFirestore(app);

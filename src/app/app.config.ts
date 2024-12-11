@@ -6,9 +6,9 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHotToastConfig } from '@ngneat/hot-toast';
 import { provideTransloco } from '@ngneat/transloco';
-import { environment } from '../environments/environment';
 import { routes } from './app.routes';
 import { TranslocoHttpLoader } from './transloco-loader';
+import { environment } from '../environments/environment.environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
