@@ -9,7 +9,6 @@ import {
 import { HotToastService } from '@ngneat/hot-toast';
 import { ProjectModel } from '../../shared/models/project.model';
 import { PROJECTS_LIST } from '../../shared/utils/statics';
-import { LoadingComponent } from '../components/loading/loading.component';
 import { MainHeaderComponent } from '../components/main-header/main-header.component';
 import { FireStoreService } from '../services/firestore.service';
 
@@ -20,10 +19,9 @@ import { FireStoreService } from '../services/firestore.service';
   styleUrl: './index.component.scss',
   imports: [
     CommonModule,
-    LoadingComponent,
     MainHeaderComponent,
-    ReactiveFormsModule,
-  ],
+    ReactiveFormsModule
+],
 })
 export class IndexComponent implements OnInit {
   private _isLoading = false;
