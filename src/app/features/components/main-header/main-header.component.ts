@@ -15,4 +15,15 @@ export class MainHeaderComponent {
       window.location.href = '/';
     }
   }
+
+  onNavClick(sectionId: string) {
+    // Update URL without page reload
+    window.history.pushState({}, '', `#${sectionId}`);
+    
+    // Find and scroll to the element
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

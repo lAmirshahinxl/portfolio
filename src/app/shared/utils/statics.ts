@@ -24,6 +24,27 @@ export const PROJECTS_LIST: ProjectModel[] = [
     'https://www.aquila.ch/en/bank/'
   ),
   new ProjectModel(
+    'Catchup AI Web and Mobile Application',
+    'Application & WebDevelopment',
+    'Catchup AI is a platform that provides a comprehensive suite of tools and services for managing and analyzing data from various sources, including social media platforms, websites, and other online resources.',
+    'catchup.png',
+    'https://thecatchup.ai/'
+  ),
+  new ProjectModel(
+    'Etlo super application',
+    'Application Development',
+    'With the ETLO app, you can easily access thousands of businesses, doctors, consultants, and professional services. ETLO is a comprehensive and integrated solution for all your daily needs.',
+    'etlo.png',
+    'https://etlo.app/'
+  ),
+  new ProjectModel(
+    'Hiddify application',
+    'Application Development',
+    'HiInternet Freedom Solution, All you need for an unrestricted internet',
+    'hiddify.png',
+    'https://hiddify.com/fa/'
+  ),
+  new ProjectModel(
     'Vibez App',
     'Application Development',
     'Companion for event participants with features for event discovery, communication, ticket purchase, community membership, and cashless payments',
