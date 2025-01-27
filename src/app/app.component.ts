@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FaIndexComponent } from './features/fa-index/fa-index.component';
+import { ClarityService } from './services/clarity.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { FaIndexComponent } from './features/fa-index/fa-index.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [CommonModule, RouterOutlet, FaIndexComponent],
-
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private clarityService: ClarityService) {}
+}
