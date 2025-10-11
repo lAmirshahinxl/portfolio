@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Deployment files
+.deploy_temp.exp
+.deploy_*.exp
+deploy.sh
+.ssl_*.tmp
+*.exp
