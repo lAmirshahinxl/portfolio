@@ -45,5 +45,6 @@ Thumbs.db
 .deploy_temp.exp
 .deploy_*.exp
 deploy.sh
+init-server.sh
 .ssl_*.tmp
 *.exp

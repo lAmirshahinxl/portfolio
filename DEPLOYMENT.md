@@ -1,5 +1,24 @@
 # Deployment Guide
 
+## Server Setup (First Time Only)
+
+To set up a new server, run:
+
+```bash
+./init-server.sh <server_ip> <server_password>
+```
+
+Example:
+```bash
+./init-server.sh 172.86.94.162 JpwGSJ91o7qG8D
+```
+
+This will:
+- Install nginx
+- Configure SSL with Cloudflare Origin CA certificate
+- Set up Angular SPA routing
+- Enable HTTPS redirect
+
 ## Quick Deploy
 
 To deploy your portfolio to the server, simply run:
@@ -29,12 +48,12 @@ If you prefer to deploy manually:
 npm run build
 
 # 2. Deploy using rsync (you'll be prompted for password)
-rsync -avz --delete dist/portfolio/browser/ root@45.61.129.121:/var/www/portfolio/
+rsync -avz --delete dist/portfolio/browser/ root@172.86.94.162:/var/www/portfolio/
 ```
 
 ## Server Details
 
-- **Server IP:** 45.61.129.121
+- **Current Server IP:** 172.86.94.162
 - **Server Path:** /var/www/portfolio
 - **Web Server:** nginx
 - **Domain:** https://amirabasi.top
@@ -46,13 +65,13 @@ rsync -avz --delete dist/portfolio/browser/ root@45.61.129.121:/var/www/portfoli
 - Install dependencies: `npm install`
 
 ### Connection Fails
-- Verify server is accessible: `ping 45.61.129.121`
-- Check SSH access: `ssh root@45.61.129.121`
+- Verify server is accessible: `ping 172.86.94.162`
+- Check SSH access: `ssh root@172.86.94.162`
 
 ### Site Not Updating
 - Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
-- Check if files uploaded: `ssh root@45.61.129.121 "ls -la /var/www/portfolio"`
-- Restart nginx: `ssh root@45.61.129.121 "systemctl restart nginx"`
+- Check if files uploaded: `ssh root@172.86.94.162 "ls -la /var/www/portfolio"`
+- Restart nginx: `ssh root@172.86.94.162 "systemctl restart nginx"`
 
 ## SSL Certificate
 
